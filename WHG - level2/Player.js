@@ -20,7 +20,7 @@ class Player{
 		this.coin = new Coin(11*tileSize+xoff, 5*tileSize+yoff);
 		this.setNodes();
 
-		this.deathAtPos = createVector(0,0)
+		this.deathAtPos = createVector(0,0,0)
 	}
 
 	setNodes() {
@@ -107,11 +107,12 @@ class Player{
 			this.fitness *= this.fitness;
 		} else {//if the dot didn't reach the goal then the fitness is based on how novel it is
 			this.fitness = 1000;
-			this.deathAtPos = createVector(this.pos.x,this.pos.y)
+			this.deathAtPos = createVector(this.pos.x,this.pos.y,1?this.coin.taken:0)
 			for (var i = 0; i<deathPosition.length; i++){
 				var x = deathPosition[i].x-this.deathAtPos.x;
 				var y = deathPosition[i].y-this.deathAtPos.y;
-				var fitness = x*x+y*y;
+				var z = deathPosition[i].z-this.deathAtPos.z;
+				var fitness = x*x+y*y+z*z;
 				if (this.fitness>fitness) {
 					this.fitness = fitness;
 				}

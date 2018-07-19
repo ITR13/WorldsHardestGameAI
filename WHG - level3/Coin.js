@@ -3,6 +3,8 @@ class Coin{
 		this.taken = false;
 		this.pos = createVector(x,y);
 		this.diameter = tileSize/2.0;
+		this.collisioncounter = 0;
+		this.collidedAtStep = 0;
 	}
 
 	show(){
@@ -17,11 +19,12 @@ class Coin{
 
 	collides(ptl, pbr) {//player dimensions
 		if(this.taken){ return false;}
-
+		this.collisioncounter += 1;
+		
 		var topLeft = createVector(this.pos.x - this.diameter/2, this.pos.y-this.diameter/2);
 		var bottomRight = createVector(this.pos.x + this.diameter/2, this.pos.y + this.diameter/2);
 		if ((ptl.x <bottomRight.x && pbr.x > topLeft.x) &&( ptl.y < bottomRight.y && pbr.y > topLeft.y)) {
-
+				this.collidedAtStep = this.collisioncounter;
 				this.taken = true;
 				return;
 
