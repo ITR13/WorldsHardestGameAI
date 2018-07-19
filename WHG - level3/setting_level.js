@@ -1,7 +1,7 @@
 //functions which setup the level
 
 function setLevel1Walls() {
-  tiles[0][0].wall = true;
+	tiles[0][0].wall = true;
  tiles[0][1].wall = true;
  tiles[0][2].wall = true;
  tiles[0][3].wall = true;
@@ -208,10 +208,10 @@ function setLevel1Walls() {
 
 
 function setLevel2Goal() {
-  tiles[10][4].goal = true;
-   tiles[10][5].goal = true;
-   tiles[11][4].goal = true;
-   tiles[11][5].goal = true;
+	tiles[10][4].goal = true;
+	 tiles[10][5].goal = true;
+	 tiles[11][4].goal = true;
+	 tiles[11][5].goal = true;
 }
 
 function setLevel1SafeArea() {
@@ -220,50 +220,50 @@ tiles[9][2].safe = true;
 
 
 function setEdges() {
-  for (var i = 1; i< tiles.length-1; i++) {
-    for (var j = 1; j< tiles[0].length-1; j++) {
-      if (tiles[i][j].wall) {
-        if (!tiles[i+1][j].wall) {
-          tiles[i][j].edges.push(1);
-        }
-        if (!tiles[i][j+1].wall) {
-          tiles[i][j].edges.push(2);
-        }
-        if (!tiles[i-1][j].wall) {
-          tiles[i][j].edges.push(3);
-        }
-        if (!tiles[i][j-1].wall) {
-          tiles[i][j].edges.push(4);
-        }
-      }
-    }
-  }
+	for (var i = 1; i< tiles.length-1; i++) {
+		for (var j = 1; j< tiles[0].length-1; j++) {
+			if (tiles[i][j].wall) {
+				if (!tiles[i+1][j].wall) {
+					tiles[i][j].edges.push(1);
+				}
+				if (!tiles[i][j+1].wall) {
+					tiles[i][j].edges.push(2);
+				}
+				if (!tiles[i-1][j].wall) {
+					tiles[i][j].edges.push(3);
+				}
+				if (!tiles[i][j-1].wall) {
+					tiles[i][j].edges.push(4);
+				}
+			}
+		}
+	}
 }
 
 
 function setDots() {
 
-  dots.push(new Dot(tiles[9][3],tiles[12][3],tiles[12][6], tiles[9][6],tiles[11][6], -1, 0));
-   dots.push(new Dot(tiles[9][3],tiles[12][3],tiles[12][6], tiles[9][6],tiles[10][6], -1, 0));
-   dots.push(new Dot(tiles[9][3],tiles[12][3],tiles[12][6], tiles[9][6],tiles[9][6], -1, 0));
-   dots.push(new Dot(tiles[9][3],tiles[12][3],tiles[12][6], tiles[9][6],tiles[9][5], 0, -1));
-   dots.push(new Dot(tiles[9][3],tiles[12][3],tiles[12][6], tiles[9][6],tiles[9][4], 0, -1));
+	dots.push(new Dot(tiles[9][3],tiles[12][3],tiles[12][6], tiles[9][6],tiles[11][6], -1, 0));
+	 dots.push(new Dot(tiles[9][3],tiles[12][3],tiles[12][6], tiles[9][6],tiles[10][6], -1, 0));
+	 dots.push(new Dot(tiles[9][3],tiles[12][3],tiles[12][6], tiles[9][6],tiles[9][6], -1, 0));
+	 dots.push(new Dot(tiles[9][3],tiles[12][3],tiles[12][6], tiles[9][6],tiles[9][5], 0, -1));
+	 dots.push(new Dot(tiles[9][3],tiles[12][3],tiles[12][6], tiles[9][6],tiles[9][4], 0, -1));
 
-   dots.push(new Dot(tiles[9][3],tiles[12][3],tiles[12][6], tiles[9][6],tiles[9][3], 0, -1));
-   dots.push(new Dot(tiles[9][3],tiles[12][3],tiles[12][6], tiles[9][6],tiles[10][3], 1, 0));
-   dots.push(new Dot(tiles[9][3],tiles[12][3],tiles[12][6], tiles[9][6],tiles[11][3], 1, 0));
-   dots.push(new Dot(tiles[9][3],tiles[12][3],tiles[12][6], tiles[9][6],tiles[12][3], 1, 0));
+	 dots.push(new Dot(tiles[9][3],tiles[12][3],tiles[12][6], tiles[9][6],tiles[9][3], 0, -1));
+	 dots.push(new Dot(tiles[9][3],tiles[12][3],tiles[12][6], tiles[9][6],tiles[10][3], 1, 0));
+	 dots.push(new Dot(tiles[9][3],tiles[12][3],tiles[12][6], tiles[9][6],tiles[11][3], 1, 0));
+	 dots.push(new Dot(tiles[9][3],tiles[12][3],tiles[12][6], tiles[9][6],tiles[12][3], 1, 0));
 
-   dots.push(new Dot(tiles[9][3],tiles[12][3],tiles[12][6], tiles[9][6],tiles[12][4], 0, 1));
-   dots.push(new Dot(tiles[9][3],tiles[12][3],tiles[12][6], tiles[9][6],tiles[12][5], 0, 1));
+	 dots.push(new Dot(tiles[9][3],tiles[12][3],tiles[12][6], tiles[9][6],tiles[12][4], 0, 1));
+	 dots.push(new Dot(tiles[9][3],tiles[12][3],tiles[12][6], tiles[9][6],tiles[12][5], 0, 1));
 
 }
 
 
 function setSolids() {
-  solids.push(new Solid(tiles[8][7],  tiles[13][7]));
-   solids.push(new Solid(tiles[13][2],  tiles[13][7]));
-   solids.push(new Solid(tiles[10][2],  tiles[13][2]));
-   solids.push(new Solid(tiles[8][1],  tiles[10][1]));
-   solids.push(new Solid(tiles[8][1],  tiles[8][7]));
+	solids.push(new Solid(tiles[8][7],	tiles[13][7]));
+	 solids.push(new Solid(tiles[13][2],	tiles[13][7]));
+	 solids.push(new Solid(tiles[10][2],	tiles[13][2]));
+	 solids.push(new Solid(tiles[8][1],	tiles[10][1]));
+	 solids.push(new Solid(tiles[8][1],	tiles[8][7]));
 }
